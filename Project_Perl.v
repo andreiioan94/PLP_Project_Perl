@@ -46,7 +46,7 @@ Inductive BExp :=
 | band : BExp -> BExp -> BExp
 | bor : BExp -> BExp -> BExp.
 
-
+Notation "!' A" := (bnot A)(at level 53).
 Notation "A == B" := (bequal A B) (at level 51).
 Notation "A != B" := (bnot(A == B)) (at level 51).
 Notation "A &&' B" := (band A B) (at level 51).
@@ -254,7 +254,8 @@ Inductive Stmt :=
 | st : Stiva -> Stmt
 | arr : Arr -> Stmt
 | hs : Hash -> Stmt
-| declaration : dec -> Stmt -> Stmt.
+| declaration : dec -> Stmt -> Stmt
+| sub: Stmt -> Stmt -> Stmt.
 
 Notation "A ::= B" := (assignment A B) (at level 90).
 Notation "S ;; S'" := (sequence S S') (at level 93, right associativity).
@@ -267,6 +268,7 @@ Coercion hs : Hash >-> Stmt.
 Coercion AExpS : AExp >-> Stmt.
 
 
+
 Definition PROGRAM :=
   n::=5;;
   if_then(n == 5) 
@@ -277,6 +279,9 @@ Definition PROGRAM :=
     hash1 <-: #' #( 2,5 )# ; #( 3,6 )# '# ;;
     hash1 #[ 3 ]#
   );;
+  sub (1) (
+    C_push (5) (' 2, 3 ')
+);;
   l <-: (' 2,4,6 ');;
   x ::= C_first l;;
   y ::= x +' 5;;
