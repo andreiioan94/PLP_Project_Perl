@@ -23,3 +23,4 @@ VERSION 1.1:
   7. Operatii pentru Coada: C_first, C_pop, C_push
   8. Operatii pentu Stiva: S_top, S_pop, S_push
   9. Operatii pentru Vector: Accesarea elementelor din vector ( V [' X '] )
+  10. Subrutine simple: sub nume operatii. Momentan numele poate fi doar un numar.
