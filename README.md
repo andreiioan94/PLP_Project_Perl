@@ -13,7 +13,7 @@ VERSION 1.0:
 4. Hashes. Perechei key/value folosind tabele.
 
 VERSION 1.1:
- - au fost adaugata sintaxa pentru: 
+ - a fost adaugata sintaxa pentru: 
   1. Operatiile aritmetice ( +' , -' , *' , /' , %') 
   2. Comparatii numerice (==, !=, <, >, <=, >=)
   3. Comparatii logice (&&' , ||' , !') 
@@ -24,3 +24,6 @@ VERSION 1.1:
   8. Operatii pentu Stiva: S_top, S_pop, S_push
   9. Operatii pentru Vector: Accesarea elementelor din vector ( V [' X '] )
   10. Subrutine simple: sub nume operatii. Momentan numele poate fi doar un numar.
+
+VERSION 1.2:
+ - a fost adaugata semantica operationala pentru limbajul definit.
